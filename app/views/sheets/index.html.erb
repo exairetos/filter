@@ -1,8 +1,7 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Sheets</h1>
 
-<table>
+<table class="table table-striped">
+
   <thead>
     <tr>
       <th colspan="3"></th>
@@ -11,7 +10,18 @@
 
   <tbody>
     <% @sheets.each do |sheet| %>
+      <thead>
+        <th scope="col">Filter Nr</th>
+        <th scope="col">Name</th>
+        <th scope="col">Width</th>
+        <th scope="col">Height</th>
+        <th scope="col" colspan="3" >Actions</th>
+      </thead>
       <tr>
+        <td scope="row"><%= sheet.code %></td>
+        <td><%= sheet.name %></td>
+        <td><%= sheet.width %>m</td>
+        <td><%= sheet.height %>m</td>
         <td><%= link_to 'Show', sheet %></td>
         <td><%= link_to 'Edit', edit_sheet_path(sheet) %></td>
         <td><%= link_to 'Destroy', sheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>

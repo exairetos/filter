@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_05_111833) do
+ActiveRecord::Schema.define(version: 2020_05_05_183617) do
 
-  create_table "sheets", force: :cascade do |t|
+  create_table "filters", force: :cascade do |t|
     t.string "code"
     t.string "name"
     t.decimal "width", precision: 4, scale: 3
     t.decimal "height", precision: 4, scale: 3
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "productions", force: :cascade do |t|
+    t.string "title"
+    t.string "producer"
+    t.string "venue"
+    t.date "zero_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

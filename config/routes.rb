@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :productions
   resources :sheets
   devise_for :users
   root 'welcome#index'
