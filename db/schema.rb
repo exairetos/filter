@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_112922) do
+ActiveRecord::Schema.define(version: 2020_05_05_111833) do
+
+  create_table "sheets", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.decimal "width", precision: 4, scale: 3
+    t.decimal "height", precision: 4, scale: 3
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
